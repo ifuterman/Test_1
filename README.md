@@ -15,4 +15,5 @@ Fast parsing based on the code table for char. We know the offset for '0' symbol
 Digital representation of the IP field is shifted to the corresponding octet. At the end we have "packed" IP.
 For each IP, the status is checked in the corresponding BitSet, if state is false, we count IP and change status.
 ## Usage
-The class Solution has the entry point "main", first argument is the full path to text file with IPs
+The class Solution has the entry point "main", first argument is the full path to text file with IPs.
+IPs are not checked

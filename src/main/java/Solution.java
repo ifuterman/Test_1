@@ -10,7 +10,6 @@ public class Solution {
         }
         File file = new File(arg[0]);
         IPRegistrant ipCounter = new IPRegistrant();
-        System.out.println(ZonedDateTime.now().format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {
             String line;
             while ((line = br.readLine()) != null) {
@@ -19,7 +18,6 @@ public class Solution {
         } catch (Exception e) {
             System.out.println(0);
         }
-        System.out.println(ZonedDateTime.now().format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));
         System.out.println(ipCounter.getUniqueIpCount());
     }
 }

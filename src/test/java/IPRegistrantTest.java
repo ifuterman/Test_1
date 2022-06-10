@@ -2,16 +2,15 @@ import junit.framework.TestCase;
 import org.junit.Assert;
 
 public class IPRegistrantTest extends TestCase {
-    String[] ipArray = new String[]{
-            "255.255.255.255", "0.0.0.0", "127.255.255.255", "88.123.65.1", "88.123.65.1"
-    };
+//    String[] ipArray = new String[]{
+//            "255.255.255.255", "0.0.0.0", "127.255.255.255", "88.123.65.1", "88.123.65.1"
+//    };
     IPRegistrant registrant = new IPRegistrant();
-
     public void testRegisterIp() {
-        for(int i = 0; i < 4; i++){
-            Assert.assertTrue(registrant.registerIp(ipArray[i]));
+        String[] ipArray = new String[]{"1.2.3.4", "4.5.6.7", "9.9.8.8"};
+        for (String s : ipArray) {
+            Assert.assertTrue(registrant.registerIp(s));
         }
-        Assert.assertFalse(registrant.registerIp(ipArray[4]));
-        Assert.assertEquals(4, registrant.getUniqueIpCount());
+        Assert.assertEquals(3, registrant.getUniqueIpCount());
     }
 }

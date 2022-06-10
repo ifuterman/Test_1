@@ -9,15 +9,8 @@ public class Solution {
             return;
         }
         File file = new File(arg[0]);
-        IPRegistrant ipCounter = new IPRegistrant();
-        try (BufferedReader br = new BufferedReader(new FileReader(file))) {
-            String line;
-            while ((line = br.readLine()) != null) {
-                ipCounter.registerIp(line);
-            }
-        } catch (Exception e) {
-            System.out.println(0);
-        }
-        System.out.println(ipCounter.getUniqueIpCount());
+        IPLogFile log = new IPLogFile(file);
+        log.parseFile();
+        System.out.println(log.getUniqueIpCount());
     }
 }
